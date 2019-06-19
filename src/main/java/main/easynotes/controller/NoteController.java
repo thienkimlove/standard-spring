@@ -1,8 +1,8 @@
-package com.example.easynotes.controller;
+package main.easynotes.controller;
 
-import com.example.easynotes.exception.ResourceNotFoundException;
-import com.example.easynotes.model.Note;
-import com.example.easynotes.repository.NoteRepository;
+import main.easynotes.exception.ResourceNotFoundException;
+import main.easynotes.model.Note;
+import main.easynotes.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,8 +46,7 @@ public class NoteController {
         note.setTitle(noteDetails.getTitle());
         note.setContent(noteDetails.getContent());
 
-        Note updatedNote = noteRepository.save(note);
-        return updatedNote;
+        return noteRepository.save(note);
     }
 
     @DeleteMapping("/notes/{id}")
